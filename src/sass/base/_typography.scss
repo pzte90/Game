@@ -1,0 +1,16 @@
+html{
+    font-family: $font-family;
+    font-size: $mobile-font-size;
+
+    @include media(mobile){
+        font-size: $base-font-size;
+    }
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+h2{
+    font-size: 1.2rem;
+}

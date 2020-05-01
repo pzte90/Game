@@ -1,0 +1,21 @@
+//https://colorsinspo.com
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext');
+
+
+$main-color: #2b2024;
+$secondary-color: #fbf9fa;
+$contrast-color: #fd0054;
+
+$base-font-size: 26px;
+$mobile-font-size: 14px;
+
+$font-family: 'Roboto', 'arial', sans-serif;
+
+$main-spacing: 20px;
+
+$breakpoint: (
+    mobile: '576px',
+    tablet: '768px',
+    deskopt: '992px',
+);

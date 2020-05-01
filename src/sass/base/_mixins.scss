@@ -1,0 +1,20 @@
+@mixin media($size) {
+    @if(map-get($breakpoint, $size)){
+        $breakpoint: #{map-get($breakpoint, $size)};
+        @media(min-width: $breakpoint){
+            @content;
+        }
+    }@else{
+        @error 'There is no value !';
+    }
+};
+
+@mixin orientation($orientation) {
+    @if($orientation == landscape or $orientation == portrait){
+        @media(orientation: #{$orientation}){
+            @content;
+        }
+    }@else{
+        @error 'There is no value !';
+    }
+};
