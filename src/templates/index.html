@@ -4,14 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
+    <script src="https://kit.fontawesome.com/d12ccddb36.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <p>jakiś tekst</p>
-    <div>
-        <img src="images/internet.jpg" alt="internet">
-    </div>
-    <div class="parking">
+    <div class="wrapper">
+        <section class="general">
+            <div class="general__logo">
+                <span class="general__logo-dice fas fa-dice-d6"></span>
+            </div>
+            <div class="general__info">
+                <p class="general__info-value">Account:<span> 1000$</span></p>
+                <p class="general__info-count">Game:<span> 10</span></p>
+                <p class="general__info-win">Wins:<span> 7</span></p>
+                <p class="general__info-lose">Loses:<span> 3</span></p>
+            </div>
+        </section>
         
+        <section class="cards">
+            <div class="cards__container">
+                
+            </div>
+            <div class="cards__container">
+                
+            </div>
+            <div class="cards__container">
+                
+            </div>
+        </section>
+        
+        <section class="play">
+            <input class="play__bid" type="number" placeholder=" Podaj stawkę">
+            <button class="play__btn"><span class="far fa-hand-paper"></span></button>
+        </section>
     </div>
+    
+    <div class="blure"></div>
 </body>
 </html>

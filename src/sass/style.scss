@@ -2,11 +2,12 @@
 @import './base/variables';
 @import './base/mixins';
 @import './base/typography';
+@import './content/wrapper';
+@import './content/blure';
+@import './content/general';
+@import './content/cards';
+@import './content/play';
 
-
-body{
-    background-color:royalblue;
-}
 
 .parking{
     width: 400px;
