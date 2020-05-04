@@ -1,3 +1,4 @@
 import './sass/style.scss';
-import img from './images/internet.jpg';
-import './js/game'
+import Game from './js/game.js';
+
+const game = new Game();

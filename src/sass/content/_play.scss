@@ -2,54 +2,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: $main-spacing/4;
-    @media (max-width: 425px) {
-        flex-direction: row;
-    }
+    margin: $main-spacing/3;
+    margin-bottom: $main-spacing;
+    z-index: 1;
     @include orientation(landscape){
         flex-direction: row;
+        justify-content: center;
     }
-    @include media(tablet){
+    @include media(mobile){
         flex-direction: row;
+        justify-content: center;
     }
     &__bid{
-        width: 100%;
+        flex: 1 0 1;
         height: 50px;
-        background-color: $main-color;
+        background-color: inherit;
         color: $secondary-color;
         border: none;
-        margin-bottom: $main-spacing*2;
+        margin-bottom: $main-spacing;
         text-align: center;
-        @media (max-width: 425px) {
-            margin: 0;
+        font-size: 20px;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder{
+            color: $secondary-color;
         }
         @include orientation(landscape){
             margin: 0;
         }
-        @include media(tablet){
+        @include media(mobile){
             margin: 0;
         }
     }
     &__btn{
         cursor: pointer;
-        width: 75px;
-        height: 75px;
+        width: 50px;
+        height: 50px;
         background-color: $main-color;
         border: $secondary-color 1px solid;
         border-radius: 50%;
         color: $contrast-color;
-        font-size: $base-font-size*2;
+        font-size: $base-font-size*1.5;
         margin-bottom: $main-spacing;
-        @media (max-width: 425px) {
-            margin: 0 0 0 -20px;
-        }
         @include orientation(landscape){
             margin: 0 0 0 -20px;
         }
-        @include media(tablet){
+        @include media(mobile){
             margin: 0 0 0 -20px;
-            width: 100px;
-            height: 100px;
         }
     }
 }

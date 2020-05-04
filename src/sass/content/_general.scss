@@ -3,7 +3,9 @@
     display: flex;
     align-items: center;
     color: $contrast-color;
-    margin: $main-spacing/4;
+    margin: $main-spacing/3;
+    margin-top: $main-spacing;
+    margin-bottom: auto;
     letter-spacing: 1px;
     overflow: hidden;
     &__logo{
@@ -17,22 +19,15 @@
         border-radius: 50%;
         margin-right: -10px;
         z-index: 999;
-        box-shadow: -10px 0 none;
+        box-shadow: 0 0 0 10px inherit;
         cursor: pointer;
-        @include media(tablet){
-            flex: 0 0 100px;
-            height: 100px;
-        }
-        &:hover ~ .general__info{
-            transform: translateX(0);
-        }
-        &-dice{
+        // &:hover ~ .general__info{
+        //     transform: translateX(0);
+        // }
+        &-gamepad{
             display: block;
             color: $contrast-color;
             font-size: $base-font-size*2;
-            @include media(tablet){
-                font-size: $base-font-size*3;
-            }
         }
     }
     &__info{
@@ -55,9 +50,9 @@
             0 8px 16px rgba(0,0,0,0.07),
             0 16px 32px rgba(0,0,0,0.07), 
             0 32px 64px rgba(0,0,0,0.07);
-            @media (max-width: 340px) {
+            @media (max-width: 345px) {
                 padding: $main-spacing/6;
-                margin-right: $main-spacing/3;
+                margin-right: $main-spacing/4;
             }
             span{
                 display: block;
@@ -72,7 +67,7 @@
             }
         }
         &-value{
-            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
