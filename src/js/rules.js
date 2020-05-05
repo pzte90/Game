@@ -7,16 +7,15 @@ export default class Rules{
                 return color === uniqueColors[i]
                 })
                 if(sameColor.length === 3){
-                    win += 1.2
+                    win += 0
                 } else if(sameColor.length === 4){
-                    win += 1.5
+                    win += 2
                 } else if(sameColor.length === 5){
                     win += 2
                 } else if(sameColor.length === 6){
-                    win += 3
+                    win += 2
                 }
             }
-            console.log(win);
             return win;
         }
 }
