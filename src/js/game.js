@@ -4,6 +4,12 @@ import Statistics from './statistics.js';
 
 export default class Game{
     constructor(){
+        this.statsBtn = document.querySelector('.statistics__btn');
+        this.statsPanel = document.querySelector('.statistics');
+        this.statsBtn.addEventListener('click', () => {
+            this.statsPanel.classList.toggle('statistics--show')
+        });
+        
         this.accountValue = document.querySelector('.general__info-value span'),
         this.accountMoney = parseInt(this.accountValue.textContent),
 
@@ -51,6 +57,7 @@ export default class Game{
 
         this.stats.collectHistroy(games, wins, loses, bid, bonus, moneyWon, 0, this.accountMoney);
         console.log(this.stats.gameHistory);
+        this.stats.showStats(this.statsPanel, games, wins, loses, bid, bonus, moneyWon, 0, this.accountMoney);
     }
     
     render(){
@@ -67,6 +74,5 @@ export default class Game{
         let temporaryAccountValue = this.stats.countMoney(this.accountMoney,bid);
         this.accountValue.textContent = ` ${temporaryAccountValue}$`;
         return [temporaryAccountValue, bid]
-    }
-    
+    }    
 };

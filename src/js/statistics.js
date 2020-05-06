@@ -33,4 +33,9 @@ export default class Statistics {
         
         this.gameHistory.push(history)
     }
+    showStats(contener, games, wins, loses, bid, bonus, moneyWon, moneyLose, accountMoney){
+        let newLine = document.createElement('p');
+        newLine.textContent = `Games: ${games} | Wins: ${wins} | Loses: ${loses} | Bid: ${bid} | Bonus: ${bonus} | Money won: ${moneyWon} | Money Lose: ${moneyLose} | Account Value: ${accountMoney}`;
+        contener.appendChild(newLine);
+    }
 }
