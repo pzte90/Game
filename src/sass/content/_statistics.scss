@@ -3,7 +3,7 @@
     color: $contrast-color;
     left: 100%;
     z-index: 999;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.815);
     transition: 0.8s ease-in-out;
@@ -12,7 +12,7 @@
         left: 0;
     }
     &__btn{
-        position: relative;
+        position: absolute;
         transform: translate(-50%, -50%);
         top: 40%;
         width: 50px;
@@ -23,7 +23,7 @@
         font-size: 20px;
         display: flex;
         align-items: flex-end;
-        & div{
+        &-show-hide{
             transform: rotate(270deg);
             margin-bottom: 15px;
             text-align: end;
@@ -43,8 +43,8 @@
         }
     }
     &__header{
-        text-align: center;
-        margin:50px 0 30px 0;
+        margin: 30px 0 30px 0;
+        justify-content: center;
     }
     &__reset-game{
         width: 100px;
@@ -55,8 +55,12 @@
         color: $contrast-color;
         margin-bottom: 20px;
     }
-    &__history-element{
-        color: $secondary-color;
-        margin-bottom: 10px;
+    &__history{
+        width: 80%;
+        margin: 0 auto;
+        &-element{
+            color: $secondary-color;
+            margin-bottom: 10px;
+        }
     }
-}
+    }
