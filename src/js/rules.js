@@ -11,9 +11,9 @@ export default class Rules{
                 } else if(sameColor.length === 4){
                     win += 2
                 } else if(sameColor.length === 5){
-                    win += 2
+                    win += 3
                 } else if(sameColor.length === 6){
-                    win += 2
+                    win += 4
                 }
             }
             return win;

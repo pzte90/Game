@@ -35,7 +35,8 @@ export default class Statistics {
     }
     showStats(contener, games, wins, loses, bid, bonus, moneyWon, moneyLose, accountMoney){
         let newLine = document.createElement('p');
-        newLine.textContent = `Games: ${games} | Wins: ${wins} | Loses: ${loses} | Bid: ${bid} | Bonus: ${bonus} | Money won: ${moneyWon} | Money Lose: ${moneyLose} | Account Value: ${accountMoney}`;
+        newLine.classList.add('statistics__history-element')
+        newLine.textContent = `Games: ${games} | Wins: ${wins} | Loses: ${loses} | Bid: ${bid} | Bonus: ${bonus} | Money won: ${moneyWon} | Money Lose: ${bonus ? 0 : moneyLose = bid} | Account Value: ${accountMoney}`;
         contener.appendChild(newLine);
     }
 }
