@@ -9,15 +9,16 @@
 <body>
     <div class="wrapper">
         <div class="hero-bg"></div>
+        
         <section class="general">
             <div class="general__logo">
                 <span class="general__logo-gamepad fas fa-gamepad"></span>
             </div>
             <div class="general__info">
-                <p class="general__info-value">Account:<span> 1000$</span></p>
-                <p class="general__info-count">Games:<span> 0</span></p>
-                <p class="general__info-win">Wins:<span> 0</span></p>
-                <p class="general__info-lose">Loses:<span> 0</span></p>
+                <p class="general__info-value">Account:<span>1000$</span></p>
+                <p class="general__info-count">Games:<span>0</span></p>
+                <p class="general__info-win">Wins:<span>0</span></p>
+                <p class="general__info-lose">Loses:<span>0</span></p>
             </div>
         </section>
 
@@ -52,12 +53,15 @@
         <section class="statistics">
             <h1 class="statistics__header">STATISTICS</h1>
             <button class="statistics__reset-game">Reset Game</button>
-            <div class="statistics__history"></div>
+            <div class="statistics__container">
+                <div class="statistics__container-slider"></div>
+                <div class="statistics__container-dots"></div>
+            </div>
             <div class="statistics__btn">
                 <span class="statistics__btn-text">Stats</span>
                 <div class="statistics__btn-show-hide">
-                    <span>show </span>
-                    <span>hide </span>
+                    <span>show</span>
+                    <span>hide</span>
                 </div>
             </div>
         </section>
