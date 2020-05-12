@@ -109,7 +109,7 @@ export default class Game{
         if(bid <= this.accountMoney && bid > 0){
             let temporaryAccountValue = this.accountMoney - bid;
             this.accountValue.textContent = `${temporaryAccountValue}$`;
-            return { temporaryAccountValue, bid } // bid bedzie potrzebny bo zmienia sie dynamicznie
+            return { temporaryAccountValue, bid } // bid bedzie potrzebny - zmienia sie dynamicznie
         } else {
             this.bidValue.value = '';
             this.bidValue.placeholder = 'Wrong Bid !';
