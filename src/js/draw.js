@@ -3,14 +3,10 @@ export default class Draw{
         this.options = ['blue', 'red', 'white'];
     }
     drawColors(cards){
-        let colors = [];
-        for(let i = 0; i < cards; i++ ){
+        let colors = cards.map( card => {
             let randomColor = Math.floor(Math.random() * this.options.length);
-            colors.push(this.options[randomColor]);
-        }
+            return this.options[randomColor]
+        })
         return colors
-    }
-    showWin(){
-        
     }
 }

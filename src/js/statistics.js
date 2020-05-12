@@ -1,42 +1,50 @@
 export default class Statistics {
     constructor(){
-        this.gameStats = [
-            {
+        this.gameStats = {
                 games: 0,
                 wins: 0,
                 loses: 0,
-            },
-        ]
-        this.gameHistory = []
+            };
+        this.historyCards = [];
+        this.countCards = -1;
     }
-    countMoney(accountValue, bid){
-        let temporaryAccountValue = accountValue - bid;
-        return temporaryAccountValue;
-    }
-    countGames(win){
-        this.gameStats[0].games ++
-        win ? this.gameStats[0].wins++ : this.gameStats[0].loses++;
-    }
-    collectHistroy(games = 0, wins = 0, loses = 0, bid = 0, bonus = 0, moneyWin = 0, moneyLose = 0 , accountValue = 0){
-        bonus ? bonus : moneyLose = bid;
 
-        let history = {
-            games: games,
-            wins: wins,
-            loses: loses,
-            bid: bid,
-            bonus: bonus,
-            moneyWin: moneyWin,
-            moneyLose: moneyLose,
-            accountValue: accountValue,
+    countGames(win){
+        this.gameStats.games = this.gameStats.games + 1;
+        if(win){
+            this.gameStats.wins = this.gameStats.wins + 1;
+        } else{
+            this.gameStats.loses = this.gameStats.loses + 1;
         }
-        
-        this.gameHistory.push(history)
     }
-    showStats(contener, games, wins, loses, bid, bonus, moneyWon, moneyLose, accountMoney){
+
+    createHistoryCard(){
+        let historyCard = document.createElement('div');
+        historyCard.classList.add('statistics__history');
+        historyCard.style.left = `${(this.historyCards.length)*100}%`;
+        const newDot = document.createElement('span');
+        newDot.classList.add('dot');
+        newDot.dataset.number = `${this.historyCards.length}`;
+        this.historyCards.push(historyCard);
+        if(newDot.dataset.number === '0'){
+            newDot.classList.add('active');
+        };
+        return { historyCard, newDot }
+    }
+
+    showStats(bid, bonus, moneyWon, moneyLose, accountMoney){
         let newLine = document.createElement('p');
-        newLine.classList.add('statistics__history-element')
-        newLine.textContent = `Games: ${games} | Wins: ${wins} | Loses: ${loses} | Bid: ${bid} | Bonus: ${bonus} | Money won: ${moneyWon} | Money Lose: ${bonus ? 0 : moneyLose = bid} | Account Value: ${accountMoney}`;
-        contener.appendChild(newLine);
+        newLine.classList.add('statistics__history-element');
+        newLine.textContent = (`
+        Games: ${this.gameStats.games} | 
+        Wins: ${this.gameStats.wins} | 
+        Loses: ${this.gameStats.loses} | 
+        Bid: ${bid} | Bonus: ${bonus} | 
+        Money won: ${moneyWon} | 
+        Money Lose: ${bonus ? 0 : moneyLose = bid} | 
+        Account Value: ${accountMoney}
+        `);
+        return newLine
     }
+
 }
