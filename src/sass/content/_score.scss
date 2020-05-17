@@ -8,9 +8,15 @@
     color: $secondary-color;
     margin: 0 auto;
     display: none;
-    &--show{
+    &--win{
         display: block;
         animation: showScore 1s forwards;
+        color: rgb(31, 155, 31);
+    }
+    &--lose{
+        display: block;
+        animation: showScore 1s forwards;
+        color: rgb(235, 13, 13);
     }
 }
 

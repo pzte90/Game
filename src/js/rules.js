@@ -1,21 +1,19 @@
 const checkWin = (colors) => {
-    let win = 0;
-    [...new Set(colors)].forEach(uniqueColor => {
-        let winColors = colors.filter(color => {
-            return color === uniqueColor
-        })
-        if(winColors.length === 3){
-            win += 1
-        } else if(winColors.length === 4){
-            win += 2
-        } else if(winColors.length === 5){
-            win += 3
-        } else if(winColors.length === 6){
-            win += 4
+    return [...new Set(colors)].reduce((total, currColor) => {
+        let winColors = colors.filter(color => color === currColor);
+        switch(winColors.length){
+            case 3:
+                return total + 1
+            case 4:
+                return total + 2
+            case 5:
+                return total + 3
+            case 6:
+                return total + 4
+            default:
+                return total
         }
-    })
-    return win
+    }, 0)
 }
-
 
 export { checkWin };

@@ -6,7 +6,8 @@ export default class Statistics {
                 loses: 0,
             };
         this.historyCards = [];
-        this.countCards = -1;
+        this.countStatsLines = 0;
+        this.heightRatio = 0;
     }
 
     countGames(win){
@@ -19,20 +20,22 @@ export default class Statistics {
     }
 
     createHistoryCard(){
-        let historyCard = document.createElement('div');
-        historyCard.classList.add('statistics__history');
-        historyCard.style.left = `${(this.historyCards.length)*100}%`;
-        const newDot = document.createElement('span');
-        newDot.classList.add('dot');
-        newDot.dataset.number = `${this.historyCards.length}`;
-        this.historyCards.push(historyCard);
-        if(newDot.dataset.number === '0'){
-            newDot.classList.add('active');
-        };
-        return { historyCard, newDot }
+            this.countStatsLines = 0;
+            let historyCard = document.createElement('div');
+            historyCard.classList.add('statistics__history');
+            historyCard.style.left = `${(this.historyCards.length)*100}%`;
+            const historyDot = document.createElement('span');
+            historyDot.classList.add('dot');
+            historyDot.dataset.number = `${this.historyCards.length}`;
+            this.historyCards.push(historyCard);
+            if(historyDot.dataset.number === '0'){
+                historyDot.classList.add('active');
+            }
+            return { historyCard, historyDot }
     }
 
-    showStats(bid, bonus, moneyWon, moneyLose, accountMoney){
+    renderStatsLine(bid, bonus, moneyWon, moneyLose, accountMoney){
+        this.countStatsLines = this.countStatsLines + 1
         let newLine = document.createElement('p');
         newLine.classList.add('statistics__history-element');
         newLine.textContent = (`
@@ -46,5 +49,17 @@ export default class Statistics {
         `);
         return newLine
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
